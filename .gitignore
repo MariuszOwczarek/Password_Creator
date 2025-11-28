@@ -1,0 +1,53 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env/
+venv/
+.venv/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+
+# IDEs
+# VSCode
+.vscode/
+
+# JetBrains (IntelliJ, PyCharm, WebStorm)
+.idea/
+*.iml
+
+# Logs
+logs/
+*.log
+
+# OS Cache
+.cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Output
+coverage/
