@@ -51,15 +51,21 @@ class PasswordPolicy:
             raise PolicyError("Policy Error: allowed_specials must be a string"
                               "or list of single-character strings")
 
-        if (
-            self.deny_substrings is not None
-            and not isinstance(self.deny_substrings, list)
-        ):
-            raise PolicyError("Policy Error: deny_substrings must be a "
-                              "list of strings")
+        if self.deny_substrings is not None:
+            if not isinstance(self.deny_substrings, list):
+                raise PolicyError("Policy Error: deny_substrings must be a "
+                                  "list of strings")
+            if not all(isinstance(s, str) for s in self.deny_substrings):
+                raise PolicyError("All deny_substrings must be strings")
 
         if self.length_min > 1024 or self.length_max > 1024:
-            raise PolicyError("Policy Error: length values are too large")
+            raise PolicyError("Policy Error: length values are too large "
+                              "(max value 1024)")
+
+        if (self.no_whitespace and self.allowed_specials is not None
+           and any(c.isspace() for c in self.allowed_specials)):
+            raise PolicyError("Policy Error: Special characters cannot "
+                              "have whitespaces")
 
     def to_dict(self) -> dict:
         return {
