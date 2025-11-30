@@ -1,6 +1,6 @@
 import pytest
-from Policy.policy import PasswordPolicy
-from Policy.errors import PolicyError
+from policy.policy import PasswordPolicy
+from policy.errors import PolicyError
 
 
 def test_length_min_greater_than_length_max():

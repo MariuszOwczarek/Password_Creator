@@ -1,5 +1,5 @@
 from typing import Optional, Sequence
-from Policy.errors import PolicyError
+from policy.errors import PolicyError
 
 MAX_ALLOWED_LENGTH = 1024
 
