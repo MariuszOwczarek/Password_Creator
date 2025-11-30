@@ -51,3 +51,7 @@ temp/
 
 # Output
 coverage/
+*.egg-info/
+build/
+dist/
+.eggs/
