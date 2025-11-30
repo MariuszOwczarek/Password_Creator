@@ -1,6 +1,6 @@
 import pytest
-from PasswordCr.policy import PasswordPolicy
-from PasswordCr.errors import PolicyError
+from Policy.policy import PasswordPolicy
+from Policy.errors import PolicyError
 
 
 def test_length_min_greater_than_length_max():
@@ -47,4 +47,3 @@ def test_serialization_roundtrip():
     data = policy.to_dict()
     policy2 = PasswordPolicy.from_dict(data)
     assert policy2.to_dict() == data
-
