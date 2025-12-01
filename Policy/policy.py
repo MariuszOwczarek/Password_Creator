@@ -207,19 +207,3 @@ class PasswordPolicy:
             max_consecutive_same=max_consecutive_same,
             no_whitespace=no_whitespace
         )
-
-
-if __name__ == "__main__":
-    pp = PasswordPolicy(length_min=10,
-                        length_max=12,
-                        require_upper=True,
-                        require_lower=True,
-                        require_digits=True,
-                        require_specials=False,
-                        allowed_specials=['%', '!', '@'],
-                        deny_substrings=['password', 'admin'],
-                        max_consecutive_same=3,
-                        no_whitespace=True)
-
-    for k, v in pp.to_dict().items():
-        print(f'{k}:{v}')
